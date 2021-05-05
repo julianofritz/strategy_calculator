@@ -1,0 +1,19 @@
+{
+    "name": "juliano/calculadora_strategy",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "sempro/phpunit-pretty-print": "^1.4"
+    },
+    "authors": [
+        {
+            "name": "juliano.basso.whitefox",
+            "email": "julianofritz@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Calculator\\": "src"
+        }
+    },
+    "require": {}
+}
