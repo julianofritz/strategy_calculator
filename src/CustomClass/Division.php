@@ -4,10 +4,11 @@
 namespace Calculator\CustomClass;
 
 
-class Division extends Operator
+class Division implements OperatorInterface
 {
-    public function calculate(): float
+
+    public function calculate(float $num1, float $num2): float
     {
-        return $this->num1 / $this->num2;
+        return $num1 / $num2;
     }
 }

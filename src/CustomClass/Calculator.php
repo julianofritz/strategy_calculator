@@ -4,7 +4,7 @@
 namespace Calculator\CustomClass;
 
 
-class Calculator implements CalculatorInterface
+class Calculator
 {
     /**
      * @var OperatorInterface
@@ -13,14 +13,16 @@ class Calculator implements CalculatorInterface
 
     public function __construct(OperatorInterface $operator)
     {
-        $this->operator = $operator;
+        $className = get_class($operator);
+
+        $this->operator = new $className;
     }
 
-    public function execute()
+    public function execute($num1, $num2)
     {
         try {
-            return $this->operator->calculate();
-        } catch (\Exception $e) {
+            return $this->operator->calculate($num1, $num2);
+        } catch (\ArgumentCountError | \TypeError $e) {
             throw new \Exception($e->getMessage());
         }
 

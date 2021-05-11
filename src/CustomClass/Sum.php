@@ -4,10 +4,11 @@
 namespace Calculator\CustomClass;
 
 
-class Sum extends Operator
+class Sum implements OperatorInterface
 {
-    public function calculate(): float
+
+    public function calculate(float $num1, float $num2): float
     {
-        return $this->num1 + $this->num2;
+        return $num1 + $num2;
     }
 }

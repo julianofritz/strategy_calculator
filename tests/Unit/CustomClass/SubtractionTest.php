@@ -23,9 +23,7 @@ class SubtractionTest extends TestCase
     public function testCalculate($num1, $num2, $expected)
     {
         $calculator = new Subtraction();
-        $calculator->setNum1($num1);
-        $calculator->setNum2($num2);
-        $result = $calculator->calculate();
+        $result = $calculator->calculate($num1, $num2);
 
         $this->assertEquals($expected, $result);
     }
