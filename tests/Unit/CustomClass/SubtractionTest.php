@@ -17,13 +17,27 @@ class SubtractionTest extends TestCase
         $this->assertInstanceOf(Subtraction::class, $calculator);
     }
 
-    public function testCalculate()
+    /**
+     * @dataProvider provider
+     */
+    public function testCalculate($num1, $num2, $expected)
     {
         $calculator = new Subtraction();
-        $calculator->setNum1(4);
-        $calculator->setNum2(2);
+        $calculator->setNum1($num1);
+        $calculator->setNum2($num2);
         $result = $calculator->calculate();
 
-        $this->assertEquals(2, $result);
+        $this->assertEquals($expected, $result);
     }
+
+    public function provider(): array
+    {
+        return [
+            [4, 2, 2],
+            [-4, -2, -2],
+            [-5, 3, -8],
+            [-1, 2, -3]
+        ];
+    }
+
 }

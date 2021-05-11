@@ -17,13 +17,26 @@ class MultiplicationTest extends TestCase
         $this->assertInstanceOf(Multiplication::class, $calculator);
     }
 
-    public function testCalculate()
+    /**
+     * @dataProvider provider
+     */
+    public function testCalculate($num1, $num2, $expected)
     {
         $calculator = new Multiplication();
-        $calculator->setNum1(2);
-        $calculator->setNum2(1);
+        $calculator->setNum1($num1);
+        $calculator->setNum2($num2);
         $result = $calculator->calculate();
 
-        $this->assertEquals(2, $result);
+        $this->assertEquals($expected, $result);
+    }
+
+    public function provider(): array
+    {
+        return [
+            [4, 2, 8],
+            [-4, -2, 8],
+            [-5, 3, -15],
+            [-1, 2, -2]
+        ];
     }
 }
