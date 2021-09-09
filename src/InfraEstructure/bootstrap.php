@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
 use Calculator\Domain\Service\Sum;
 use Calculator\Domain\Service\Subtraction;

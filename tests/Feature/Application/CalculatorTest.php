@@ -28,12 +28,20 @@ class CalculatorTest extends TestCase
         $this->assertInstanceOf(Calculator::class, $this->calculator);
     }
 
-    public function testException(): void
+    public function testShoulThrowTypeErroException(): void
     {
         $sum = new Sum();
 
         $this->expectException(\TypeError::class);
         $this->calculator->setOperator($sum)->execute(null, null);
+    }
+
+    public function testShoulThrowArgumentCountException(): void
+    {
+        $sum = new Sum();
+
+        $this->expectException(\ArgumentCountError::class);
+        $this->calculator->setOperator($sum)->execute(2);
     }
 
     /**

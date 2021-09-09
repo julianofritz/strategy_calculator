@@ -24,10 +24,9 @@ class Calculator
     {
         try {
             return $this->operator->calculate($num1, $num2);
-        } catch (\ArgumentCountError | \TypeError | \Exception $e) {
+        } catch (\ArgumentCountError | \TypeError $e) {
             throw new \Exception($e->getMessage());
         }
-
     }
 
 }
