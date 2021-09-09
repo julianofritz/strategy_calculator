@@ -1,20 +1,21 @@
 <?php
 
+declare(strict_types=1);
 
-namespace Unit\CustomClass;
+namespace Unit\Domain\Service;
 
-
-use Calculator\CustomClass\OperatorInterface;
-use Calculator\CustomClass\Sum;
+use Calculator\Domain\Service\OperatorInterface;
+use Calculator\Domain\Service\Division;
 use PHPUnit\Framework\TestCase;
 
-class SumTest extends TestCase
+class DivisionTest extends TestCase
 {
     public function testLoadClass()
     {
-        $calculator = new Sum();
+        $calculator = new Division();
+
         $this->assertInstanceOf(OperatorInterface::class, $calculator);
-        $this->assertInstanceOf(Sum::class, $calculator);
+        $this->assertInstanceOf(Division::class, $calculator);
     }
 
     /**
@@ -22,7 +23,7 @@ class SumTest extends TestCase
      */
     public function testCalculate($num1, $num2, $expected)
     {
-        $calculator = new Sum();
+        $calculator = new Division();
         $result = $calculator->calculate($num1, $num2);
 
         $this->assertEquals($expected, $result);
@@ -31,10 +32,8 @@ class SumTest extends TestCase
     public function provider(): array
     {
         return [
-            [1,2,3],
-            [2,2,4],
-            [-2,2,0]
+            [4, 2, 2],
+            [5, 2, 2.5]
         ];
     }
-
 }
