@@ -32,4 +32,4 @@ jobs:
     #   run: composer run-script test
     
     - name: run PHPMD
-      run: ./vendor/bin/phpmd src/ github codesize,unusedcode,naming
+      run: ./vendor/bin/phpmd src/ html codesize,unusedcode,naming --reportfile result-wow.html
