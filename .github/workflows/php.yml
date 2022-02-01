@@ -32,4 +32,4 @@ jobs:
     #   run: composer run-script test
     
     - name: run PHPMD
-      run: phpmd src/
+      run: ./vendor/bin/phpmd src/
