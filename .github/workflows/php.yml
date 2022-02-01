@@ -17,4 +17,4 @@ jobs:
           tools: phpmd
 
       - name: Run PHPMD
-        run: phpmd src/ github cleancode,codesize,controversial,design,naming,unusedcode --exclude 'tests/*,vendor/*'
+        run: phpmd . github cleancode,codesize,controversial,design,naming,unusedcode --exclude 'vendor/*'
