@@ -32,5 +32,4 @@ jobs:
     #   run: composer run-script test
     
     - name: run PHPMD
-      with:
-          tools: phpmd
+      run: vendor/bin/phpmd src/
