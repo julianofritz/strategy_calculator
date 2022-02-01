@@ -18,6 +18,9 @@ class Calculator implements CalculatorInterface
 
     public function execute()
     {
+        $a = 1;
+$b = $a;
+$asfadsfadsfadsfadsfadsfadsfsfd = 0;
         try {
             return $this->operator->calculate();
         } catch (\Exception $e) {
