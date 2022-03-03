@@ -7,5 +7,4 @@ use Calculator\CustomClass\Sum;
 $calculator = new Sum();
 $calculator->setNum1(2);
 $calculator->setNum2(3);
-
 echo $calculator->calculate();
