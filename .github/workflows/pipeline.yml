@@ -28,8 +28,8 @@ jobs:
       - name: Install project dependencies
         run: sudo composer install
 
-      - name: Run PHPMD
-        run: vendor/bin/phpmd . text cleancode,codesize,controversial,design,naming,unusedcode --exclude 'vendor/*'
+      #- name: Run PHPMD
+     #   run: vendor/bin/phpmd . text cleancode,codesize,controversial,design,naming,unusedcode --exclude 'vendor/*'
 
       - name: Run PHP Unit
         run: vendor/bin/phpunit
