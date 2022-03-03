@@ -17,10 +17,13 @@ jobs:
           php-version: '7.3'
 
       - name: Checkout project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Install composer
         uses: php-actions/composer@v6
+
+      - name: Remove vendor
+        run: rm -rf vendor
 
       - name: Install project dependencies
         run: composer install
