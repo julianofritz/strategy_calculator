@@ -1,4 +1,4 @@
-name: Simple Pipeline
+name: Simple Pipeline on push to master and develop
 
 on:
   push:
