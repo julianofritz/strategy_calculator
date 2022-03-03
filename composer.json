@@ -18,5 +18,7 @@
             "Calculator\\": "src"
         }
     },
-    "require": {}
+    "require": {
+        "phpstan/phpstan": "^1.4"
+    }
 }
