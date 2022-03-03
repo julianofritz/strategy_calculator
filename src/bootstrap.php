@@ -2,10 +2,10 @@
 require __DIR__.'/../vendor/autoload.php';
 
 use Calculator\CustomClass\Sum;
+
 //sum
 $calculator = new Sum();
-echo $calculator->calculate(1, 6);
+$calculator->setNum1(2);
+$calculator->setNum2(3);
 
-$a = 1;
-$b = $a;
-$asfadsfadsfadsfadsfadsfadsfsfd = 0;
+echo $calculator->calculate();
