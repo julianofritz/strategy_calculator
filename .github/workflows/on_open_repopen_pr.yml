@@ -7,6 +7,10 @@ on:
       - reopened
       - synchronize
 
+  check_suite:
+    types:
+      - completed
+
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -33,7 +37,16 @@ jobs:
         run: vendor/bin/phpstan analyse src/ tests/ --level 5
 
       - name: Run PHPMD
-        run: vendor/bin/phpmd . github codesize,controversial,design,naming,unusedcode --exclude 'vendor/*'
+        run: vendor/bin/phpmd . github cleancode,codesize,controversial,design,naming,unusedcode --exclude 'vendor/*'
 
       - name: Run PHP Unit
         run: vendor/bin/phpunit
+
+  merge:
+    name: Merge me
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge me!
+        uses: ridedott/merge-me-action@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
