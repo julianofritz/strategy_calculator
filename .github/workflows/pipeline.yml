@@ -23,10 +23,10 @@ jobs:
         uses: php-actions/composer@v6
 
       - name: Remove vendor
-        run: rm -rf vendor
+        run: sudo rm -rf vendor
 
       - name: Install project dependencies
-        run: composer install
+        run: sudo composer install
 
       - name: Run PHPMD
         run: phpmd . text cleancode,codesize,controversial,design,naming,unusedcode --exclude 'vendor/*'
