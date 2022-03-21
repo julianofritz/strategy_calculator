@@ -13,6 +13,7 @@ class Calculator implements CalculatorInterface
 
     public function __construct(OperatorInterface $operator)
     {
+        $a = 1;
         $this->operator = $operator;
     }
 
